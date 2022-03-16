@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\PHPMailer as PHPMailer;
 
 require_once '../Router.php';
 require_once '../models/propiedad.php';
-require_once '../models/blog.php';
+require_once '../models/Blog.php';
 
 class PaginasController{
 
