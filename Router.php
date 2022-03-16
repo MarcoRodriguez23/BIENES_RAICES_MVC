@@ -3,8 +3,8 @@
 namespace MVC;
 
 class Router{
-    public $rutasGET=[];
-    public $rutasPOST=[];
+    public array $rutasGET=[];
+    public array $rutasPOST=[];
     
     public function get($url, $fn){
         $this->rutasGET[$url]=$fn;
