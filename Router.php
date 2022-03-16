@@ -23,7 +23,7 @@ class Router{
         $rutas_protegidas=['/admin','propiedades/crear','propiedades/actualizar','propiedades/eliminar','vendedores/crear','vendedores/actualizar','vendedores/eliminar'];
         
         //CAMBIAR PATH_INFO POR REQUEST_URI AL PASAR A HEROKU
-        $urlActual =  ($_SERVER['PATH_INFO']==='')?'/': $_SERVER['PATH_INFO'];
+        $urlActual =  ($_SERVER['REQUEST_URI']==='')?'/': $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
         
         if ($metodo === 'GET') {
