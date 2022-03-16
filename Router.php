@@ -25,11 +25,15 @@ class Router{
         //CAMBIAR PATH_INFO POR REQUEST_URI AL PASAR A HEROKU
         $urlActual =  ($_SERVER['REQUEST_URI']==='')?'/': $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
+
+        //dividimos la URL actual cada vez que exista un '?' eso indica que se están pasando variables por la url
+        $splitURL = explode('?', $urlActual);
+        // debuguear($splitURL);
         
         if ($metodo === 'GET') {
-            $fn = $this->rutasGET[$urlActual] ?? null;
+            $fn = $this->rutasGET[$splitURL[0]] ?? null; //$splitURL[0] contiene la URL sin variables 
         } else {
-            $fn = $this->rutasPOST[$urlActual] ?? null;
+            $fn = $this->rutasPOST[$splitURL[0]] ?? null;
         }
 
         //protegiendo rutas
