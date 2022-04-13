@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__.'/../includes/app.php';
+    header('Content-Type: text/html; charset=UTF-8');
 
     use MVC\Router;
     use Controllers\PropiedadController;
