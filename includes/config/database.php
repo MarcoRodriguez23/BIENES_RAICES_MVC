@@ -11,5 +11,7 @@
             echo "No se conecto";
             exit;
         }
+        //para poder visualizar los acentos correctamente
+        $db->set_charset("utf8");
         return $db;
     }
