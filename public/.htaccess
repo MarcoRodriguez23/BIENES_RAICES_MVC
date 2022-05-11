@@ -2,3 +2,8 @@ Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
+
+php_value upload_max_filesize 10M
+php_value post_max_size 20M
+php_value max_execution_time 100
+php_value max_input_time 100
