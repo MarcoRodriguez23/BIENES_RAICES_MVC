@@ -58,8 +58,8 @@ class PropiedadController{
                 }
                 
                 //guardando la imagen en el servidor
-                // $img->save(CARPETA_IMAGENES . $nombreImagen);
-                $img->save(trim(CARPETA_IMAGENES . $nombreImagen));
+                $img->save(CARPETA_IMAGENES . $nombreImagen);
+                // $img->save(trim(CARPETA_IMAGENES . $nombreImagen));
     
                 //GUARDANDO EN LA BD
                 $resultado=$propiedad->guardar();
