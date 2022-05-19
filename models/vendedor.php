@@ -34,4 +34,10 @@ class Vendedor extends activeRecord{
         }
         return self::$errores;
     }
+
+    public static function evitarDuplicidad(){
+        self::$errores[]="Esta ingresando información de un vendedor ya existente";
+
+        return self::$errores;
+    }
 }

@@ -20,6 +20,19 @@ class VendedorController{
             
             //validar que no haya campos vacios
             $errores=$vendedor->validar();
+
+            $nombreYaRegistrado = Vendedor::where('nombre',$vendedor->nombre);
+            if($nombreYaRegistrado){
+                $apellidoYaRegistrado = Vendedor::where('apellido',$vendedor->apellido);
+                if($apellidoYaRegistrado){
+                    $telefonoYaRegistrado = Vendedor::where('telefono',$vendedor->telefono);
+                    if($telefonoYaRegistrado){
+                        $errores = Vendedor::evitarDuplicidad();
+                    }
+                }
+            }
+
+            $errores = Vendedor::getErrores();
     
             //si no hay errores
             if(empty($errores)){

@@ -20,10 +20,29 @@
             <legend>Información personal</legend>
 
             <label for="nombre">Nombre</label>
-            <input data-cy="input-nombre" type="text" placeholder="Tu nombre" id="nombre" name="contacto[nombre]" required>
+            <input 
+                data-cy="input-nombre" 
+                type="text" 
+                placeholder="Tu nombre" 
+                id="nombre" 
+                name="contacto[nombre]" 
+                required
+                maxlength="40"
+                oninput=
+                "this.value = this.value.replace(/[^a-zA-Z ]/,'')
+                if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"    
+            >
 
             <label for="mensaje">Mensaje: </label>
-            <textarea data-cy="input-mensaje" id="mensaje" name="contacto[mensaje]" required></textarea>
+            <textarea 
+                data-cy="input-mensaje" 
+                id="mensaje" 
+                name="contacto[mensaje]" 
+                required
+                oninput=
+                "this.value = this.value.replace(/[^0-9a-zA-Z ]/,'')"    
+            >
+            </textarea>
         </fieldset>
 
         <fieldset>
@@ -36,7 +55,18 @@
             </select>
 
             <label for="presupuesto">Presupuesto</label>
-            <input data-cy="input-presupuesto" type="number" placeholder="Tu precio o presupuesto" id="presupuesto" name="contacto[precio]" required>
+            <input 
+                data-cy="input-presupuesto"
+                type="number" 
+                placeholder="Tu precio o presupuesto" 
+                id="presupuesto" 
+                name="contacto[precio]" 
+                required
+                maxlength="10"
+                oninput=
+                "this.value = this.value.replace(/[^0-9]/,'')
+                if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"     
+            >
             
         </fieldset>
 

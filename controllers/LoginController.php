@@ -40,6 +40,8 @@ class LoginController{
             }
         }
 
+        $errores = Admin::getErrores();
+
         $router->view('auth/login',[
             'errores'=>$errores
         ]);

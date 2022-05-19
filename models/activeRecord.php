@@ -56,7 +56,7 @@ class activeRecord{
         return $resultado;
         
     }
-
+    
     public function crear(){
         //sanitizando los datos
         $atributos= $this->sanitizarAtributos();
@@ -148,6 +148,13 @@ class activeRecord{
         $query = "SELECT * FROM ". static::$tabla ." WHERE id=${id}";
         $resultado=self::consultarSQL($query);
         return array_shift($resultado);
+    }
+
+    //buscar un registro por columna y valor
+    public static function where($columna,$valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return array_shift( $resultado ) ;
     }
 
     public static function consultarSQL($query){

@@ -105,6 +105,12 @@ class PropiedadController{
             }
     
             if(empty($errores)){
+
+                //si la carpeta no existe, crearla
+                if (!is_dir(CARPETA_IMAGENES)) {
+                    mkdir(CARPETA_IMAGENES);
+                }
+
                 //almacenar imagen
                 if($_FILES['propiedad']['tmp_name']['imagen']){
                     $img->save(CARPETA_IMAGENES . $nombreImagen);

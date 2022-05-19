@@ -9,10 +9,10 @@
         <fieldset>
             <legend>Email y password</legend>
             <label for="email">E-mail</label>
-            <input type="email" placeholder="Tu email" id="email" name="email" required>
+            <input type="email" placeholder="Tu email" id="email" name="email" required maxlength="50">
 
-            <label for="password">password</label>
-            <input type="password" placeholder="Tu password" id="password" name="password" required>
+            <label for="password">password (Máx. 12 caracteres)</label>
+            <input type="password" placeholder="Tu password" id="password" name="password" required maxlength="12">
         </fieldset>
 
         <input type="submit" value="Iniciar Sesión" class="boton-verde">
