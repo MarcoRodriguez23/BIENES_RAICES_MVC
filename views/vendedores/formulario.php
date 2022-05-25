@@ -11,7 +11,7 @@
         maxlength="45"
         value="<?php echo s($vendedor->nombre); ?>"
         oninput=
-        "this.value = this.value.replace(/[^a-zA-Z ]/,'')
+        "this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚ ]/,'')
         if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
     >
     <label for="apellido">* Apellido:</label>
@@ -23,7 +23,7 @@
         maxlength="45"
         value="<?php echo s($vendedor->apellido); ?>"
         oninput=
-        "this.value = this.value.replace(/[^a-zA-Z ]/,'')
+        "this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚ ]/,'')
         if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"   
     >
 
