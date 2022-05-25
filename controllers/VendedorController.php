@@ -62,6 +62,17 @@ class VendedorController{
             $vendedor->sincronizar($args);
     
             $errores=$vendedor->validar();
+
+            $nombreYaRegistrado = Vendedor::where('nombre',$vendedor->nombre);
+            if($nombreYaRegistrado){
+                $apellidoYaRegistrado = Vendedor::where('apellido',$vendedor->apellido);
+                if($apellidoYaRegistrado){
+                    $telefonoYaRegistrado = Vendedor::where('telefono',$vendedor->telefono);
+                    if($telefonoYaRegistrado){
+                        $errores = Vendedor::evitarDuplicidad();
+                    }
+                }
+            }
     
             if(empty($errores)){
                 $resultado = $vendedor->guardar();
