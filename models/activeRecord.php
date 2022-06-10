@@ -152,9 +152,18 @@ class activeRecord{
 
     //buscar un registro por columna y valor
     public static function where($columna,$valor) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} LIKE '%${valor}%'";
         $resultado = self::consultarSQL($query);
+        
         return array_shift( $resultado ) ;
+    }
+
+    //buscar un registro por columna y valor
+    public static function whereAll($columna,$valor) {
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} LIKE '%${valor}%'";
+        $resultado = self::consultarSQL($query);
+        
+        return $resultado;
     }
 
     public static function consultarSQL($query){
